@@ -1,0 +1,55 @@
+{
+  "name": "vite-plugin-crx-reload",
+  "version": "0.0.1",
+  "description": "HMR for chrome extension with vite",
+  "keywords": [
+    "chrome",
+    "reload",
+    "hmr",
+    "crx",
+    "plugin",
+    "vite"
+  ],
+  "author": "MicLon <jcnd@163.com>",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": "./*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mic1on/vite-plugin-crx-reload.git"
+  },
+  "homepage": "https://github.com/mic1on/vite-plugin-crx-reload.git",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "clean": true,
+    "dts": true,
+    "format": [
+      "cjs",
+      "esm"
+    ]
+  },
+  "scripts": {
+    "build": "tsup-node",
+    "build:publish": "npm run build && npm publish"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "tsup": "^5.12.1",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0",
+    "ws": "^8.13.0"
+  }
+}
